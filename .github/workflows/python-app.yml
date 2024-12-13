@@ -42,19 +42,27 @@ jobs:
       run: |
         pytest
 
-    - name: Install Poetry Action
-      uses: snok/install-poetry@v1.3.3
-      
-    - name: Setup a local virtual environment (if no poetry.toml file)
-      run: |
-          poetry config virtualenvs.create true --local
-          poetry config virtualenvs.in-project true --local
     - uses: actions/cache@v3
       name: Define a cache for the virtual environment based on the dependencies lock file
       with:
         path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
         key: venv-${{ hashFiles('poetry.lock') }}
         restore-keys: venv-
+  
+    - name: Install Poetry Action
+      uses: snok/install-poetry@v1.3.3
+
+    - name: Add Poetry to $PATH
+      run: |
+        echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+    - name: Get pyproject version
+      run: poetry version
+      
+    - name: Setup a local virtual environment (if no poetry.toml file)
+      run: |
+          poetry config virtualenvs.create true --local
+          poetry config virtualenvs.in-project true --local
+    
     - name: Install the project dependencies
       run: poetry install --no-root
       
