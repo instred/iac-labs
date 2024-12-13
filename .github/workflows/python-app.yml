@@ -75,6 +75,9 @@ jobs:
         path: /home/runner/work/iac-labs/iac-labs/example-app/.venv # Path to your virtual environment
         key: ${{ runner.os }}-venv
         restore-keys: ${{ runner.os }}-venv
+
+    - name: Activate virtual environment
+      run: source .venv/bin/activate
         
     - name: Run lint
       run: poetry run task lint
