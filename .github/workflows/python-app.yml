@@ -54,12 +54,7 @@ jobs:
 
     - name: Get pyproject version
       run: poetry version
-      
-    - name: Setup a local virtual environment (if no poetry.toml file)
-      run: |
-          poetry config virtualenvs.create true --local
-          poetry config virtualenvs.in-project true --local
-    
+
     - name: Install the project dependencies
       run: poetry install --no-root
       
