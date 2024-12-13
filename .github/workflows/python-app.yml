@@ -54,6 +54,7 @@ jobs:
       with:
         path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
         key: ${{ runner.os }}-venv
+        restore-keys: ${{ runner.os }}-venv
     - name: Install the project dependencies
       run: poetry install
       
