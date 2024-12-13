@@ -32,6 +32,9 @@ jobs:
       
     - name: Set up Poetry virtual environment in project folder
       run: poetry config virtualenvs.in-project true
+
+    - name: Install dependencies
+      run: poetry install --no-root
       
     - name: Cache build venv
       id: cached-poetry-dependencies
