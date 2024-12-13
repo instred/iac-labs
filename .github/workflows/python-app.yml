@@ -40,14 +40,8 @@ jobs:
       id: cached-poetry-dependencies
       uses: actions/cache@v3
       with:
-        # Cache the virtual environment directory
-        path: ./.venv
+        path: /home/runner/work/iac-labs/iac-labs/example-app/.venv
         key: ${{ runner.os }}-venv
-    
-    - name: Verify files and directories
-      run: ls -la /home/runner/work/iac-labs/iac-labs
-    - name: Verify files and directories2
-      run: ls -la /home/runner/work/iac-labs/iac-labs/example-app
-      
+
   
           
