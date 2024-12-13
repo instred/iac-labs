@@ -52,9 +52,6 @@ jobs:
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3
 
-    - name: Add Poetry to $PATH
-      run: |
-        echo "$HOME/.poetry/bin" >> $GITHUB_PATH
     - name: Get pyproject version
       run: poetry version
       
@@ -77,6 +74,12 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.13"
+
+    - name: Install Poetry Action
+      uses: snok/install-poetry@v1.3.3
+
+    - name: Get pyproject version
+      run: poetry version
     - name: Cache Poetry virtual environment
       uses: actions/cache@v3
       with:
@@ -86,7 +89,6 @@ jobs:
 
     - name: Activate Poetry virtual environment and run lint
       run: |
-        source /home/runner/work/iac-labs/iac-labs/example-app/.venv/bin/activate
         poetry run task lint
         
 
