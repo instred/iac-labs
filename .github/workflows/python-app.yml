@@ -18,7 +18,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./example-app
+        working-directory: ./iac-labs/example-app
 
     steps:
     - uses: actions/checkout@v4
@@ -48,7 +48,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./example-app
+        working-directory: ./iac-labs/example-app
 
     steps:
     - name: Install dependencies
