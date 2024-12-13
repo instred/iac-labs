@@ -27,15 +27,13 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.13"
-    - name: Set up Poetry virtual environment in project folder
-      run: |
-        poetry config virtualenvs.in-project true
     - name: Install Poetry Action
       uses: snok/install-poetry@v1.3.3
       
     - name: Set up Poetry virtual environment in project folder
       run: |
         poetry config virtualenvs.in-project true
+        
     - name: Cache build venv
       id: cached-poetry-dependencies
       uses: actions/cache@v3
