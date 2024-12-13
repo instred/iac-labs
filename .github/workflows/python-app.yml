@@ -77,7 +77,7 @@ jobs:
         restore-keys: ${{ runner.os }}-venv
 
     - name: Activate virtual environment
-      run: source .venv/bin/activate
+      run: source /home/runner/work/iac-labs/iac-labs/example-app/.venv/bin/activate
         
     - name: Run lint
       run: poetry run task lint
