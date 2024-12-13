@@ -42,7 +42,7 @@ jobs:
         path: ../.venv
         key: ${{ runner.os }}-venv
     - name: Verify files and directories
-      run: ls -la ../
+      run: ls -la ./
     
     
       
