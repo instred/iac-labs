@@ -22,6 +22,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Debug
+      run: |
+        echo "Listing the root directory:"
+        ls -la  # List the contents at the root of the repository
+    - name: List iac-labs directory
+      run: |
+        echo "Listing contents of the iac-labs directory:"
+        ls -la ./iac-labs  # List contents of iac-labs
+    - name: List example-app directory
+      run: |
+        echo "Listing contents of the example-app directory:"
+        ls -la ./iac-labs/example-app  # List contents of example-app
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
