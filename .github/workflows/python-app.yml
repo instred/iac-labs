@@ -50,9 +50,6 @@ jobs:
     - name: Install dependencies
       run: |
         poetry install --no-root
-    - name: Run local task
-      run: |
-        poetry run task local
     - name: Run tests
       run: |
         poetry run task test
