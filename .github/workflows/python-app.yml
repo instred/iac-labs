@@ -47,5 +47,22 @@ jobs:
       run: |
         echo "Listing the root directory:"
         ls -la  # List contents of the root directory
-
+    - name: Install dependencies
+      run: |
+        poetry install --no-root
+    - name: Run local task
+      run: |
+        poetry run task local
+    - name: Run tests
+      run: |
+        poetry run task test
+    - name: Run lint
+      run: |
+        poetry run task lint
+    - name: Run formatter
+      run: |
+        poetry run task formatter
+    - name: Run security checks
+      run: |
+        poetry run task security
           
